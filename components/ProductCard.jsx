@@ -58,9 +58,9 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <Link href={`/product/${product.id}`} className="w-fit p-2 shadow-2xl flex flex-col items-center rounded-lg hover:scale-[101%] duration-150">
+    <Link href={`/product/${product.id}`} className="w-fit h-full p-2 shadow-2xl flex flex-col items-center rounded-lg hover:scale-[101%] duration-150">
       <div className="relative">
-        <Image src={`/products_images/${product.image_url}`} alt="" width={300} height={200} />
+        <Image src={`/products_images/${product.image_url}`} alt="" width={300} height={200} priority />
         <div className={`${!isInCart ? 'bg-green-700' : 'bg-red-700'} opacity-90 w-32 h-9 absolute bottom-0 right-0 rounded-t-md rounded-l-md flex items-center p-1 cursor-pointer`} onClick={handleCartToggle}>
           {isInCart ? (
             <>
@@ -88,9 +88,9 @@ export default function ProductCard({ product }) {
         </div>
       </div>
 
-      <div>
+      <div className="w-full">
         <h4 className="text-lg font-bold text-center m-5">{product.name}</h4>
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full">
           <p className="font-black">{product.price}$</p>
           <div className="flex items-center gap-1">
             <p>{product.rate}</p>

@@ -9,7 +9,7 @@ export default function WishListPage() {
     const storageName = "favorites";
     const storedProductsIds = JSON.parse(localStorage.getItem(storageName));
     setFav(storedProductsIds);
-  }, [fav]);
+  }, []);
 
   return (
     <div className="min-h-[70vh]">
@@ -18,7 +18,7 @@ export default function WishListPage() {
         {fav.length === 0 ?
           <span>There are no products in the favorites</span>
           :
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-3">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center gap-5">
             {fav.map((p, i) => (
               <ProductCard product={products[p - 1]} key={i} />
             ))}
