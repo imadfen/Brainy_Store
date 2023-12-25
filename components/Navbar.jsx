@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="w-screen px-20 py-2 bg-white drop-shadow-md flex items-center justify-between z-50 fixed top-0 cursor-default">
             <div className='flex items-end flex-grow'>
                 <Link href="/">
-                    <Image src="/icons/brainy_store_logo.png" alt="Logo" width={80} height={80} />
+                    <Image src="/icons/brainy_store_logo.png" alt="Logo" width={80} height={80} priority />
                 </Link>
                 <div className='flex ml-20 mb-3'>
                     <NavLink href="/" label="Home" currentPath={currentPathname} />

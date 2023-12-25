@@ -3,65 +3,57 @@ import { Rating } from 'react-simple-star-rating';
 import React, { useState, useEffect } from 'react';
 import { FaCartPlus, FaTrash, FaHeart } from "react-icons/fa";
 import Link from "next/link";
+import getCartIds from "../utils/getCartIds"
+import getFavIds from "../utils/getFavIds"
+import addToFav from "../utils/addToFav"
+import addToCart from "../utils/addToCart"
+import removeFromFav from "../utils/removeFromFav"
+import removeFromCart from "../utils/removeFromCart"
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, triggerUpdate }) {
   const [isInCart, setIsInCart] = useState(false);
-  const [rating, setRating] = useState(0);
   const [isInFavorites, setIsInFavorites] = useState(false);
 
   useEffect(() => {
-    const storageName = "cart";
-    const storedProductsIds = JSON.parse(localStorage.getItem(storageName)) || [];
-    setIsInCart(storedProductsIds.includes(product.id));
+    const cartProductsIds = getCartIds() || [];
+    setIsInCart(cartProductsIds.includes(product.id));
 
-    const favoritesStorageName = "favorites";
-    const storedFavoritesIds = JSON.parse(localStorage.getItem(favoritesStorageName)) || [];
-    setIsInFavorites(storedFavoritesIds.includes(product.id));
-  }, [product.id]);
+    const favProductsIds = getFavIds() || [];
+    setIsInFavorites(favProductsIds.includes(product.id));
+  }, []);
 
-  const handleRating = (rate) => {
-    setRating(rate);
-  };
-
-  const handleCartToggle = (event) => {
+  const handleCartToggle = (event, id) => {
     event.preventDefault();
-
-    const storageName = "cart";
-    const storedProductsIds = JSON.parse(localStorage.getItem(storageName)) || [];
-
-    if (isInCart) {
-      const newList = storedProductsIds.filter((productId) => productId !== product.id);
-      localStorage.setItem(storageName, JSON.stringify(newList));
+    if (getCartIds().includes(id)) {
+      removeFromCart(id);
       setIsInCart(false);
     } else {
-      const newList = [...storedProductsIds, product.id];
-      localStorage.setItem(storageName, JSON.stringify(newList));
+      addToCart(id);
       setIsInCart(true);
     }
+
+    if (triggerUpdate) triggerUpdate();
   };
 
-  const handleFavoritesToggle = (event) => {
+  const handleFavoritesToggle = (event, id) => {
     event.preventDefault();
 
-    const favoritesStorageName = "favorites";
-    const storedFavoritesIds = JSON.parse(localStorage.getItem(favoritesStorageName)) || [];
-
-    if (isInFavorites) {
-      const newFavoritesList = storedFavoritesIds.filter((productId) => productId !== product.id);
-      localStorage.setItem(favoritesStorageName, JSON.stringify(newFavoritesList));
+    if (getFavIds().includes(id)) {
+      removeFromFav(id);
       setIsInFavorites(false);
     } else {
-      const newFavoritesList = [...storedFavoritesIds, product.id];
-      localStorage.setItem(favoritesStorageName, JSON.stringify(newFavoritesList));
+      addToFav(id);
       setIsInFavorites(true);
     }
+
+    if (triggerUpdate) triggerUpdate();
   };
 
   return (
     <Link href={`/product/${product.id}`} className="w-fit h-full p-2 shadow-2xl flex flex-col items-center rounded-lg hover:scale-[101%] duration-150">
       <div className="relative">
         <Image src={`/products_images/${product.image_url}`} alt="" width={300} height={200} priority />
-        <div className={`${!isInCart ? 'bg-green-700' : 'bg-red-700'} opacity-90 w-32 h-9 absolute bottom-0 right-0 rounded-t-md rounded-l-md flex items-center p-1 cursor-pointer`} onClick={handleCartToggle}>
+        <div className={`${!isInCart ? 'bg-green-700' : 'bg-red-700'} opacity-90 w-32 h-9 absolute bottom-0 right-0 rounded-t-md rounded-l-md flex items-center p-1 cursor-pointer`} onClick={(e) => handleCartToggle(e, product.id)}>
           {isInCart ? (
             <>
               <FaTrash className="text-white text-xl" />
@@ -75,7 +67,7 @@ export default function ProductCard({ product }) {
           )}
         </div>
 
-        <div className="absolute p-[6px] top-0 right-0 m-2 cursor-pointer bg-slate-500 rounded-full" onClick={handleFavoritesToggle}>
+        <div className="absolute p-[6px] top-0 right-0 m-2 cursor-pointer bg-slate-500 rounded-full" onClick={(e) => handleFavoritesToggle(e, product.id)}>
           {isInFavorites ? (
             <>
               <FaHeart className="text-red-500 text-2xl " />
@@ -95,11 +87,11 @@ export default function ProductCard({ product }) {
           <div className="flex items-center gap-1">
             <p>{product.rate}</p>
             <Rating
-                initialValue={product.rate}
-                readonly
-                allowFraction
-                size={20}
-                SVGclassName="inline-block fill-current"
+              initialValue={product.rate}
+              readonly
+              allowFraction
+              size={20}
+              SVGclassName="inline-block fill-current"
             />
           </div>
         </div>
