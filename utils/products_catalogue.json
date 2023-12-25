@@ -1,0 +1,122 @@
+[
+    {
+        "id": "001",
+        "name": "Brainy Swag Signature Tees",
+        "description": "Explore a range of Brainy Swag T-shirts, available in various sizes, colors, and designs. Showcasing our iconic brand logos and empowering slogans, these tees are crafted for comfort and style.",
+        "image_url": "brainy-swag-signature-tees.jpg",
+        "price": 25.99,
+        "rate": 4.5
+    },
+    {
+        "id": "002",
+        "name": "Cozy Confidence Hoodies",
+        "description": "Stay cozy with our collection of Brainy Swag Hoodies and Sweatshirts. Crafted for optimum comfort and designed with our signature branding, these are perfect for chilly days and making a fashion statement.",
+        "image_url": "cozy-confidence-hoodies.jpg",
+        "price": 39.99,
+        "rate": 4.8
+    },
+    {
+        "id": "003",
+        "name": "Branded Elegance Caps",
+        "description": "Accessorize in style with Brainy Swag Caps and Hats. From classic baseball caps to trendy beanies and bucket hats, all featuring our distinctive logo, these accessories elevate your look.",
+        "image_url": "branded-elegance-caps.jpg",
+        "price": 19.99,
+        "rate": 4.2
+    },
+    {
+        "id": "004",
+        "name": "Chic Carryall Collection",
+        "description": "Carry your essentials with flair using Brainy Swag Bags. Choose from versatile tote bags, convenient drawstring bags, or functional backpacks - all adorned with our branding for a touch of sophistication.",
+        "image_url": "chic-carryall-collection.jpg",
+        "price": 29.99,
+        "rate": 4.6
+    },
+    {
+        "id": "005",
+        "name": "HydroChic Insulated Bottles",
+        "description": "Stay hydrated in style with Brainy Swag Water Bottles and Flasks. Our reusable bottles and insulated flasks feature the brand's logo while keeping your drinks at the perfect temperature throughout the day.",
+        "image_url": "hydrochic-insulated-bottles.jpg",
+        "price": 15.99,
+        "rate": 4.4
+    },
+    {
+        "id": "006",
+        "name": "Vinyl Vibe Stickers",
+        "description": "Personalize your belongings with Brainy Swag Vinyl Stickers and Decals. Perfect for laptops, water bottles, or notebooks, these high-quality decals showcase our brand's creativity.",
+        "image_url": "vinyl-vibe-stickers.jpg",
+        "price": 8.99,
+        "rate": 4.7
+    },
+    {
+        "id": "007",
+        "name": "SmartStyle Notebooks",
+        "description": "Jot down your ideas in Brainy Swag Customized Notebooks and Journals. Featuring our brand's colors and logos, these notebooks complement your style while staying organized.",
+        "image_url": "smartStyle-notebooks.jpg",
+        "price": 12.99,
+        "rate": 4.5
+    },
+    {
+        "id": "008",
+        "name": "Branded Scribble Set",
+        "description": "Get creative with Brainy Swag Pens and Stationery. From branded pens and pencils to notepads and sticky notes, our stationery keeps you prepared and stylish.",
+        "image_url": "branded-scribble-set.jpg",
+        "price": 6.99,
+        "rate": 4.3
+    },
+    {
+        "id": "009",
+        "name": "Tech Fusion Accessories",
+        "description": "Accessorize your gadgets with Brainy Swag Tech Accessories. Our phone cases, laptop sleeves, and USB drives feature our branding, merging style and functionality.",
+        "image_url": "tech-fusion-accessories.jpg",
+        "price": 24.99,
+        "rate": 4.6
+    },
+    {
+        "id": "010",
+        "name": "Signature Keychain Collection",
+        "description": "Carry your keys in style with Brainy Swag Custom Keychains and Branded Lanyards. Keep your essentials close with our unique designs.",
+        "image_url": "signature-keychain-collection.jpg",
+        "price": 9.99,
+        "rate": 4.1
+    },
+    {
+        "id": "011",
+        "name": "StrideSmart Socks",
+        "description": "Step up your fashion game with Brainy Swag Custom-designed Socks. Infused with our company's branding, these socks are both comfortable and stylish.",
+        "image_url": "strideSmart-socks.jpg",
+        "price": 7.99,
+        "rate": 4.4
+    },
+    {
+        "id": "012",
+        "name": "MugMarvel Drinkware",
+        "description": "Sip in style with Brainy Swag Coffee Mugs, Tumblers, and Coasters. Featuring our brand's aesthetics, enjoy your beverages with a touch of sophistication.",
+        "image_url": "mugmarvel-drinkware.jpg",
+        "price": 10.99,
+        "rate": 4.7
+    },
+    {
+        "id": "013",
+        "name": "Branded Shelter Umbrellas",
+        "description": "Stay protected from the rain with Brainy Swag Branded Umbrellas. Practical and promotional, these umbrellas are a must-have accessory.",
+        "image_url": "branded-shelter-umbrellas.jpg",
+        "price": 19.99,
+        "rate": 4.5
+    },
+    {
+        "id": "014",
+        "name": "ShadyStyle Sunglasses",
+        "description": "Protect your eyes in style with Brainy Swag Custom Shades and Eyewear. Featuring our company's logo, these sunglasses are a perfect blend of fashion and functionality.",
+        "image_url": "shadystyle-sunglasses.jpg",
+        "price": 29.99,
+        "rate": 4.3
+    },
+    {
+        "id": "015",
+        "name": "CozyCotton Towels",
+        "description": "Wrap yourself in comfort with Brainy Swag Beach Towels and Cozy Blankets. Branded with our logo, these are perfect for leisure and relaxation.",
+        "image_url": "cozycotton-towels.jpg",
+        "price": 34.99,
+        "rate": 4.6
+    }
+]
