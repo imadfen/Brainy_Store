@@ -16,7 +16,7 @@ export default function WishListPage() {
 
   return (
     <div className="min-h-[70vh]">
-      <div className='text-3xl mb-3'>Favorites Page</div>
+      <div className='text-3xl text-center mb-3'>Your Wishlist</div>
       <div className="w-full flex justify-center">
         {fav.length === 0 ?
           <span>There are no products in the favorites</span>
