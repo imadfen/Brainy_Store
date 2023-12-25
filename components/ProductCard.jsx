@@ -22,8 +22,9 @@ export default function ProductCard({ product, triggerUpdate }) {
     setIsInFavorites(favProductsIds.includes(product.id));
   }, []);
 
-  const handleCartToggle = (event, id) => {
+  const handleCartToggle = (event) => {
     event.preventDefault();
+    const id = product.id;
     if (getCartIds().includes(id)) {
       removeFromCart(id);
       setIsInCart(false);
@@ -35,9 +36,9 @@ export default function ProductCard({ product, triggerUpdate }) {
     if (triggerUpdate) triggerUpdate();
   };
 
-  const handleFavoritesToggle = (event, id) => {
+  const handleFavoritesToggle = (event) => {
     event.preventDefault();
-
+    const id = product.id;
     if (getFavIds().includes(id)) {
       removeFromFav(id);
       setIsInFavorites(false);
@@ -53,7 +54,7 @@ export default function ProductCard({ product, triggerUpdate }) {
     <Link href={`/product/${product.id}`} className="w-fit h-full p-2 shadow-2xl flex flex-col items-center rounded-lg hover:scale-[101%] duration-150">
       <div className="relative">
         <Image src={`/products_images/${product.image_url}`} alt="" width={300} height={200} priority />
-        <div className={`${!isInCart ? 'bg-green-700' : 'bg-red-700'} opacity-90 w-32 h-9 absolute bottom-0 right-0 rounded-t-md rounded-l-md flex items-center p-1 cursor-pointer`} onClick={(e) => handleCartToggle(e, product.id)}>
+        <div className={`${!isInCart ? 'bg-green-700' : 'bg-red-700'} opacity-90 w-fit h-9 absolute bottom-0 right-0 rounded-t-md rounded-l-md flex items-center p-1 cursor-pointer`} onClick={handleCartToggle}>
           {isInCart ? (
             <>
               <FaTrash className="text-white text-xl" />
@@ -67,15 +68,11 @@ export default function ProductCard({ product, triggerUpdate }) {
           )}
         </div>
 
-        <div className="absolute p-[6px] top-0 right-0 m-2 cursor-pointer bg-slate-500 rounded-full" onClick={(e) => handleFavoritesToggle(e, product.id)}>
+        <div className="absolute p-[6px] top-0 right-0 m-2 cursor-pointer bg-slate-500 rounded-full" onClick={handleFavoritesToggle}>
           {isInFavorites ? (
-            <>
-              <FaHeart className="text-red-500 text-2xl " />
-            </>
+            <FaHeart className="text-red-500 text-2xl " />
           ) : (
-            <>
-              <FaHeart className="text-white text-2xl" />
-            </>
+            <FaHeart className="text-white text-2xl" />
           )}
         </div>
       </div>
