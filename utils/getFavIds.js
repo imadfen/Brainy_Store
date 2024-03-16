@@ -1,4 +1,8 @@
 export default function getFavIds() {
   const storageName = "favorite";
-  return JSON.parse(localStorage.getItem(storageName));
+  const localStorageValue = localStorage.getItem(storageName);
+
+  if (!localStorageValue) return [];
+
+  return JSON.parse(localStorageValue);
 }
